@@ -18,7 +18,9 @@
     padding-left: 0;
     display: flex;
 }
-#hero{
+#hero,
+#about
+{
     height: 100vh;
     position: relative;
 }
@@ -145,6 +147,39 @@
     display: none;
 } */
 
+#about{
+    padding: 20px 100px;
+    
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: bold;
+    position: relative; /* Nécessaire pour positionner l'élément `::before` */
+    padding-left: 25px; /* Ajoute un espace pour la barre */
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 51px;
+    background-color: black;
+}
+
+.about-content{
+    font-size: 24px;
+    line-height: 36px;
+    color: #323842;
+}
+
+.imp{
+    font-weight: bold;
+}
+
 @media screen and (max-width: 670px) {
     .navbar {
         padding: 0 50px;
@@ -167,6 +202,23 @@
 
         padding: 0 50px;
 
+    }
+    #about{
+        padding: 10px 50px;
+    }
+
+    .about-content{
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+
+    .section-title::before{
+        height: 30px;
+        width: 5px;
     }
 }
 
@@ -199,7 +251,9 @@ spline-viewer {
     transform: translateX(20%); /* Décale l'objet 3D vers la droite */
 }
 
-
+.nav-list a{
+    text-decoration: none;
+}
 
 @media screen and (max-width: 550px) {
     .nav-list {
@@ -265,5 +319,23 @@ spline-viewer {
     .navbar
     {
         padding: 0 20px;
+    }
+
+    #about{
+        padding: 10px 20px;
+    }
+
+    .about-content{
+        font-size: 15px;
+        text-align: start;
+    }
+
+    .section-title{
+        font-size: 20px;
+    }
+
+    .section-title::before{
+        height: 20px;
+        width: 3px;
     }
 }
