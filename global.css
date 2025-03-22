@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Sarabun';
+    src: url('assets/fonts/Sarabun-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sarabun';
+    src: url('assets/fonts/Sarabun-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sarabun';
+    src: url('assets/fonts/Sarabun-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sarabun';
+    src: url('assets/fonts/Sarabun-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  padding: 0;
+  font-family: 'Sarabun', sans-serif;
+  color: #171A1F;
+}

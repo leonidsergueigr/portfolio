@@ -1,0 +1,269 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 76px;
+    left: 0px;
+    top: -0.5px;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 2px rgba(23, 26, 31, 0.12), 0px 2px 5px rgba(23, 26, 31, 0.09);
+    padding: 0 100px;
+
+}
+
+.nav-list{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+}
+#hero{
+    height: 100vh;
+    position: relative;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.greeting{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.name{
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.sub{
+    font-size: 64px;
+}
+
+.hero-container{
+    padding-top: 76px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+    height: 100%;
+    justify-content: center;
+    z-index: 1;
+}
+
+.nav-item{
+    padding: 0 6px;
+    border-bottom: 4px solid transparent;
+    padding: 10px 6px;
+    transition: ease .3s;
+    color: #565E6C;
+    font-size: 18px;
+}
+
+.humdericon{
+    padding: 2px;
+    /* border: 1px solid #171a1f;
+    border-radius: 5px; */
+    display: flex;
+    justify-content: center;
+    transition: ease .5s;
+    display: none;
+}
+.humdericon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.nav-item:hover,
+.nav-item .active
+{
+    cursor: pointer;
+    border-bottom: 4px solid #171a1f;
+    color: #171a1f;
+    
+}
+
+.social{
+    margin: 16px 0;
+}
+
+.social .icon{
+    margin: 0 11.5px;
+    transition: ease .2s;
+}
+.social .icon:first-child {
+    margin-left: 0;
+}
+.social .icon:hover{
+    color: #171a1f;
+    transform: scale(1.2);
+}
+.btn svg{
+    width: 24px;
+}
+.btn {
+    top: 587px;
+    left: 123px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #323842; /* Couleur de l'icône et du texte par défaut */
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 18px;
+    border-width: 1px;
+    border-color: #1D2128;
+    border-style: solid;
+    gap: 6px;
+    width: 190px;
+    transition: ease .3s;
+}
+#resume{
+    margin-top: 35px;
+}
+.btn:hover {
+    cursor: pointer;
+    background: #171a1f;
+    color: #FFFFFF; /* Changer la couleur du texte et de l'icône au survol */
+}
+
+.btn:hover .icon {
+    stroke: currentColor; /* Change la couleur de l'icône en fonction de la couleur du texte */
+}
+
+/* .nav-show{
+    display: block;
+}
+
+.nav-hide{
+    display: none;
+} */
+
+@media screen and (max-width: 670px) {
+    .navbar {
+        padding: 0 50px;
+    }
+
+    .greeting{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .name{
+        font-size:70px;
+        font-weight: bold;
+    }
+    
+    .sub{
+        font-size: 32px;
+    }
+    .hero-container{
+
+        padding: 0 50px;
+
+    }
+}
+
+#project-link{
+    display: flex;
+    justify-items: center;
+    position: absolute;
+    bottom: 35px;
+    color: inherit;
+    text-decoration: none;
+    transition: ease .3s;
+}
+#project-link:hover{
+    color: #171a1f;
+
+}
+
+#project-link .icon{
+    width: 24px;
+}
+/* Positionne le spline viewer en arrière-plan */
+spline-viewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* pointer-events: none; */
+    transform: translateX(20%); /* Décale l'objet 3D vers la droite */
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 5px rgba(23, 26, 31, 0.09);
+        padding: 10px 0;
+    }
+
+    
+
+    .nav-show {
+        display: flex; /* Afficher en mode colonne */
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-item:hover{
+        background: #e1e2e4;
+        border-bottom: 4px solid transparent;
+    }
+
+    .humdericon{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 406px) {
+    .name{
+        font-size: 50px;
+    }
+    .sub{
+        font-size: 20px;
+    }
+    .greeting{
+        font-size: 15px;
+    }
+    .logo{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .name{
+        font-size: 40px;
+    }
+    .sub{
+        font-size: 15px;
+    }
+    .greeting{
+        font-size: 15px;
+    }
+
+    .hero-container,
+    .navbar
+    {
+        padding: 0 20px;
+    }
+}
