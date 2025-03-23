@@ -338,3 +338,49 @@ document.addEventListener('DOMContentLoaded', function() {
         projectLink.setAttribute('href', '#project');
     }
 });
+
+
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+    );
+}
+
+
+function animateSkillCards() {
+    const skillCards = document.querySelectorAll('.skill-card');
+    
+    skillCards.forEach(card => {
+        if (isInViewport(card)) {
+            card.classList.add('animated');
+        }
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(animateSkillCards, 500);
+});
+
+
+window.addEventListener('scroll', function() {
+    animateSkillCards();
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const skillIcons = document.querySelectorAll('.skill-icon');
+    
+    skillIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        icon.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
