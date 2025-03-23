@@ -26,7 +26,7 @@
 .shape {
     position: absolute;
     border-radius: 50%;
-    background: rgba(23, 26, 31, 0.05);
+    background: rgba(23, 26, 31, 0.111);
     animation: float 8s infinite ease-in-out;
 }
 
@@ -114,6 +114,7 @@
     list-style: none;
     padding-left: 0;
     display: flex;
+    z-index: 2;
 }
 #hero,
 #about
@@ -400,6 +401,16 @@ spline-viewer {
     .about-content{
         text-align: start;
     }
+
+    .btn{
+        font-size: 12px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .btn svg{
+        width: 15px;
+    }
 }
 
 @media screen and (max-width: 320px){
@@ -435,6 +446,15 @@ spline-viewer {
     .section-title::before{
         height: 20px;
         width: 3px;
+    }
+    .btn{
+        font-size: 12px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .btn svg{
+        width: 15px;
     }
 }
 
