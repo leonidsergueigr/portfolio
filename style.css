@@ -376,6 +376,9 @@ spline-viewer {
     .nav-item {
         text-align: center;
         padding: 10px;
+        margin: 5px 0;
+        display: block;
+        width: 100%;
     }
 
     .nav-item:hover{
@@ -385,6 +388,14 @@ spline-viewer {
 
     .humdericon{
         display: block;
+    }
+
+    .nav-item.active
+    {
+        cursor: pointer;
+        border-bottom: 4px solid transparent;
+        background: #e1e2e4;
+        color: #171a1f;
     }
 }
 
