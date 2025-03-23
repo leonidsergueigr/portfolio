@@ -299,11 +299,11 @@ body {
     }
     .hero-container{
 
-        padding: 0 50px;
+        padding: 0 20px;
 
     }
     #about, #project, #skills{
-        padding: 10px 50px;
+        padding: 10px 20px;
     }
 
     .about-content{
@@ -416,11 +416,11 @@ spline-viewer {
         text-align: start;
     }
 
-    .btn{
+    /* .btn{
         font-size: 12px;
         width: fit-content;
         height: fit-content;
-    }
+    } */
 
     .btn svg{
         width: 15px;
@@ -463,11 +463,11 @@ spline-viewer {
         height: 20px;
         width: 3px;
     }
-    .btn{
+    /* .btn{
         font-size: 12px;
         width: fit-content;
         height: fit-content;
-    }
+    } */
 
     .btn svg{
         width: 15px;
@@ -1454,10 +1454,16 @@ footer {
 
 
 @media screen and (max-width: 1024px) {
-    #contact {
+    #contact,
+    #about,
+    #skills,
+    #project,
+    .hero-container {
         padding: 50px 50px;
     }
-    
+    .navbar{
+        padding: 0 50px;
+    }
     .contact-container {
         gap: 30px;
     }
@@ -1482,8 +1488,15 @@ footer {
 }
 
 @media screen and (max-width: 550px) {
-    #contact {
+    #contact,
+    #about,
+    #project,
+    #skills,
+    .hero-container {
         padding: 40px 20px;
+    }
+    .navbar{
+        padding: 0 20px;
     }
     
     .contact-text h3 {
@@ -1506,6 +1519,11 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -1519,7 +1537,7 @@ footer {
     
     .form-group input,
     .form-group textarea {
-        padding: 10px;
+        padding: 5px;
         font-size: 14px;
     }
     
