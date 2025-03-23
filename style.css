@@ -215,7 +215,7 @@ body {
     line-height: 22px;
     font-weight: 400;
     color: #323842;
-    background: #FFFFFF;
+    background: transparent;
     opacity: 1;
     border-radius: 18px;
     border-width: 1px;
