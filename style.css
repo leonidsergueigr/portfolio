@@ -1546,3 +1546,76 @@ footer {
         font-size: 14px;
     }
 }
+
+
+.code-particle {
+    position: absolute;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1.5rem;
+    color: rgba(23, 26, 31, 0.25);
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    white-space: nowrap;
+    animation: fadeInOut .5s ease-in-out forwards;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+  
+  
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
+
+  .code-particle.tech {
+    color: rgba(188, 188, 188, 0.4); 
+  }
+  
+  .code-particle.method {
+    color: rgba(188, 188, 188, 0.4);
+  }
+  
+  .code-particle.symbol {
+    color: rgba(188, 188, 188, 0.4);
+  }
+  
+  .code-particle.snippet {
+    color: rgba(188, 188, 188, 0.4);
+  }
+  
+
+  @keyframes floatIn {
+    0% {
+      transform: rotate(-2deg) translateX(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(0deg) translateX(0);
+      opacity: 0.2;
+    }
+  }
+  
+
+  @keyframes codePulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
