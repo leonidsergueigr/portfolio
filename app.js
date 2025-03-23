@@ -384,3 +384,143 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const formDataObj = {};
+            formData.forEach((value, key) => {
+                formDataObj[key] = value;
+            });
+            
+            formStatus.textContent = "Envoi en cours...";
+            formStatus.className = "form-status status-loading";
+            formStatus.style.display = "block";
+            
+
+            setTimeout(() => {
+                try {
+
+                    console.log("Form data:", formDataObj);
+                    
+
+                    formStatus.textContent = "Message envoyé avec succès ! Je vous répondrai dès que possible.";
+                    formStatus.className = "form-status status-success";
+                    
+
+                    contactForm.reset();
+                    
+
+                    setTimeout(() => {
+                        formStatus.style.display = "none";
+                    }, 5000);
+                } catch (error) {
+                    formStatus.textContent = "Une erreur s'est produite. Veuillez réessayer plus tard.";
+                    formStatus.className = "form-status status-error";
+                }
+            }, 1500);
+            
+            fetch('https://leonidgr-projects-production.up.railway.app/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formDataObj),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l’envoi');
+                }
+                return response.json();
+            })
+            .then(data => {
+                formStatus.textContent = "Message envoyé avec succès ! Je vous répondrai dès que possible.";
+                formStatus.className = "form-status status-success";
+                contactForm.reset();
+            })
+            .catch(error => {
+                formStatus.textContent = "Une erreur s'est produite. Veuillez réessayer plus tard.";
+                formStatus.className = "form-status status-error";
+                console.error('Error:', error);
+            });
+            
+        });
+    }
+    
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        const animatedElements = contactSection.querySelectorAll('.contact-text h3, .contact-text p, .contact-method, .contact-form');
+        animatedElements.forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            observer.observe(el);
+        });
+        
+
+        document.addEventListener('scroll', function() {
+            animatedElements.forEach((el, index) => {
+                if (el.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                    setTimeout(() => {
+                        el.style.opacity = "1";
+                        el.style.transform = "translateY(0)";
+                    }, index * 100);
+                }
+            });
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const sections = document.querySelectorAll('div[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+    
+
+    function checkActiveSection() {
+        let scrollPosition = window.scrollY;
+        
+
+        const offset = 150;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - offset;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+
+                document.querySelector(`.nav-item[href="#${sectionId}"]`)?.classList.add('active');
+            }
+        });
+    }
+    
+
+    window.addEventListener('scroll', checkActiveSection);
+    
+
+    checkActiveSection();
+});
